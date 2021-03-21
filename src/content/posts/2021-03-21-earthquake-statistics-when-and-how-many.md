@@ -4,7 +4,7 @@ title: "Earthquake Statistics: When and How Many"
 slug: /earthquakes
 date: 2021-03-21 16:04
 description: earthquakes, statistics
-featuredImage: /assets/output_15_0.png
+featuredImage: /assets/eq_map.png
 ---
 Hundreds of earthquakes happen everyday, all over the Earth. The majority of these events are not felt by people and rarely cause any damage. But, the shaking of the ground doesn't go unnoticed. Earthquakes large and small are detected by number of instruments, including global and local arrays of seismographs recording in locations ranging from the tops of mountains to the bottom of the ocean.
 
