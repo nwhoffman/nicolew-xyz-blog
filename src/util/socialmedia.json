@@ -7,6 +7,10 @@
     {
       "icon": "twitter",
       "url": "https://twitter.com/nwhoffman"
+    },
+    {
+      "icon": "github",
+      "url": "https://github.com/nwhoffman"
     }
   ]
 }
