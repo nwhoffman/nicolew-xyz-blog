@@ -630,4 +630,4 @@ It seems like there are actually more events in April and fewer in July. In Apri
 
 There is definitely more to do with this data set and other similar earthquake catalog data. Specifically, I would look at how the magnitudes of the earthquakes break down over individual years and months. It would also be helpful to look at where the earthquakes are occurring, especially by comparing the locations from month to month.
 
-The data set used in this analysis is available [here](https://github.com/nwhoffman/earthquake_stats/blob/master/m6_1985_2020.csv) and the Jupyter notebook is [here](https://github.com/nwhoffman/earthquake_stats/eq_stats1.ipynb).
+The data set used in this analysis is available [here](https://github.com/nwhoffman/earthquake_stats/blob/master/m6_1985_2020.csv) and the Jupyter notebook is [here]https://github.com/nwhoffman/earthquake_stats/blob/master/eq_stats_histogram.ipynb).
