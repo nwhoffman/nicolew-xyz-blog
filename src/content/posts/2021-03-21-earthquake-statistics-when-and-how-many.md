@@ -20,7 +20,6 @@ The vast majority of the bigger earthquakes are now detected by the [The Global 
 
 Using data from 1985 to the end of 2020, let's take a look at all of the earthquakes greater than M6. The data is from the [USGS earthquake catalog](https://earthquake.usgs.gov/earthquakes/search/) with search parameters of M6 and greater worldwide, for the years 1985 to 2020.
 
-
 ```python
 # Load in the csv file of earthquakes M6 and greater 
 
@@ -34,22 +33,22 @@ df = pd.read_csv('/home/nicole/earthquakes/statistics/m6_1985_2020.csv', usecols
 df.head()
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+```
+.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+```
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -101,12 +100,9 @@ df.head()
 </table>
 </div>
 
-
-
 We're only including columns of interest and events which are earthquakes and not explosion or other human-caused events. Let's explore some of the general statistics of these events.
 
 ### General statistics
-
 
 ```python
 # Total number of earthquakes
@@ -118,13 +114,11 @@ print('Largest magnitude earthquakes:')
 df[['mag','time','place']].sort_values('mag',ascending=False).head()
 ```
 
-    Total number of events:  5463
-    Average number per week: 2.92
-    Largest magnitude earthquakes:
-
-
-
-
+```
+Total number of events:  5463
+Average number per week: 2.92
+Largest magnitude earthquakes:
+```
 
 <div>
 <style scoped>
@@ -132,13 +126,16 @@ df[['mag','time','place']].sort_values('mag',ascending=False).head()
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+```
+.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+```
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -184,14 +181,11 @@ df[['mag','time','place']].sort_values('mag',ascending=False).head()
 </table>
 </div>
 
-
-
 Since 1985, there has been an average of almost three earthquakes each week globally with a magnitude M6 or greater. The largest earthquakes have all been relatively recent, between 2004 and 2012. As expected, these events occur at subducting plate boundaries and the five largest events are on the [Ring of Fire](https://en.wikipedia.org/wiki/Ring_of_Fire).
 
 Separating the earthquakes into various time intervals, we can see if there are any patterns or other interesting features when looking at when earthquakes happen.
 
 ### Earthquakes: year, month, and day
-
 
 ```python
 # Count the number of earthquakes over various time intervals
@@ -208,22 +202,22 @@ df['dofy'] = df['time'].apply(
 df.head()
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+```
+.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+```
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -299,9 +293,6 @@ df.head()
 </table>
 </div>
 
-
-
-
 ```python
 # Find the number of earthquakes for each day, year, month, and day of the month. 
 dofy_tot = df['dofy'].value_counts(sort=True)
@@ -319,7 +310,6 @@ month_ave = month_tot.mean()
 
 ### Plotting time!
 
-
 ```python
 # Import stuff for plotting
 from matplotlib import pyplot as plt
@@ -335,7 +325,6 @@ plt.rcParams['font.size'] = 14
 plt.rcParams['legend.fontsize'] = 12
 ```
 
-
 ```python
 # Plot earthquake occurrence as a function of year
 plt.figure(figsize=(12,6))
@@ -349,14 +338,11 @@ plt.legend()
 plt.show()
 ```
 
-
 ![png](output_11_0.png)
-
 
 With the exception of a few of the years (1998, 2017, etc), the number of earthquakes each year is pretty close to the average.
 
 With a few exceptions, the number of earthquakes on any given day of the year is consistent. The dates that stand out are probably when some of the largest events occurred, since the biggest earthquakes are almost always followed by numerous aftershocks, many of which would be larger than M6. To find those events, we'll look at the day of the year with the greatest number of events.
-
 
 ```python
 # Find the day of year with the greatest number of events
@@ -368,22 +354,22 @@ df_max = df[df.dofy == dofy_max].sort_values('mag', ascending=False).head()
 df_max[['place','time','dofy','year','mag']]
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+```
+.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+```
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -441,12 +427,9 @@ df_max[['place','time','dofy','year','mag']]
 </table>
 </div>
 
-
-
 The [Tohoku-oki megathrust earthquake](https://earthquake.usgs.gov/earthquakes/eventpage/official20110311054624120_30#executive) occurred on March 11, 2011. With a magnitude of 9.1, there were hundreds of aftershocks with many of them above a magnitude 6.
 
 What about the number of earthquakes for a given month? Grouping the events by month, maybe we can demonstrate that there isn't an "earthquake month" or a particular season in which earthquakes occur. 
-
 
 ```python
 # Plot earthquake occurrence as a function of the month 
@@ -475,14 +458,11 @@ plt.legend()
 plt.show()
 ```
 
-
 ![png](output_15_0.png)
-
 
 Well, there is maybe a little bit of a trend here, with a "peak" in April and "troughs" in January and July. It would be helpful to look at the number of events each month for individual years; a heatmap will be a great way to visualize this. Time to group some data!
 
 ### Grouping events for each year
-
 
 ```python
 # Group the DataFrame: earthquake counts for each year (rows) by month (columns) 
@@ -499,22 +479,22 @@ df_newcol = df_newcol / month_length
 df_newcol.round(2).tail()
 ```
 
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+```
+.dataframe tbody tr th {
+    vertical-align: top;
+}
 
-    .dataframe thead th {
-        text-align: right;
-    }
+.dataframe thead th {
+    text-align: right;
+}
+```
+
 </style>
 <table border="1" class="dataframe">
   <thead>
@@ -629,12 +609,9 @@ df_newcol.round(2).tail()
 </table>
 </div>
 
-
-
 The grouped and unstacked data looks good. The number of earthquakes per day for each month is consistent with previous calculations; the average of each month column should equal the values plotted in the monthly bar graph above. Using the heatmap plot in the Seaborn package, let's see if there actually is an overall trend of more earthquakes in April and fewer in July.
 
 ### Heatmap for events by year and month
-
 
 ```python
 # Plot a heatmap of the unstacked DataFrame created above
@@ -645,9 +622,7 @@ plt.yticks(rotation=0)
 plt.show()
 ```
 
-
-![png](output_21_0.png)
-
+![earthquake distribution heatmap](/assets/output_21_0.png)
 
 ### April showers bring...earthquakes?
 
