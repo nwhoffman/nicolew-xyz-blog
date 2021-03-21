@@ -7,4 +7,4 @@ I like science and data and combining them in different ways to make cool data s
 
 I welcome any feedback on my code and analyses. If you have interesting data set ideas, please share! My favorite topics are educational policy, geophysics, Star Trek, and cats. And probably aliens.
 
-I am currently employed as a Curriculum Developer at [https://lambdaschool.com/](Lambda School).
+I am currently employed as a Curriculum Developer at [https://lambdaschool.com](Lambda School).
